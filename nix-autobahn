@@ -3,6 +3,10 @@ export SCRIPT
 SCRIPT=$(realpath "$1")
 
 SCRIPTDIR=$(dirname "$0")
+shift
+export ARGS=$@
+
 LIBS=$("$SCRIPTDIR/find-libs" "$SCRIPT")
 
-"$SCRIPTDIR/fhs-shell" "$LIBS"
+
+"$SCRIPTDIR/fhs-shell" "$LIBS" 

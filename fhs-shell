@@ -7,7 +7,7 @@ nix-build --no-out-link -E 'with import <nixpkgs> {};
   buildFHSUserEnv {
     name = "fhs";
     targetPkgs = p: with p; [ $PACKAGES ];
-    runScript = "$SCRIPT";
+    runScript = "$SCRIPT $ARGS";
   }
 '
 EOF
